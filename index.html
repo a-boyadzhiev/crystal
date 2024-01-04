@@ -33,7 +33,6 @@
     }
 
     @media screen and (min-width: 600px) {
-      /* Adjust styles for screens wider than 600px */
       label {
         margin: 20px;
       }
@@ -44,6 +43,26 @@
       }
     }
   </style>
+</head>
+<body>
+  <label>
+    КВ.МЕТРИ
+    <input type="number" id="numberInput" value="1">
+  </label>
+
+  <label>
+    ВИД ПОЧИСТВАНЕ:
+    <select id="optionSelect">
+      <option value="basicCleaning">Основно почистване</option>
+      <option value="postConstructionCleaning">Почистване след ремонт</option>
+      <option value="monthlySubscriptionCleaning">Абонаментно почистване при интензитет - веднъж месечно</option>
+    </select>
+  </label>
+
+  <div>
+    <h3 id="totalPrice">ЦЕНА: 4 ЛЕВА</h3>
+  </div>
+
   <script defer>
     const numberInput = document.getElementById('numberInput');
     const optionSelect = document.getElementById('optionSelect');
@@ -73,24 +92,5 @@
     // Initialize the script after the DOM has fully loaded
     document.addEventListener('DOMContentLoaded', initializeScript);
   </script>
-</head>
-<body>
-  <label>
-    КВ.МЕТРИ
-    <input type="number" id="numberInput" value="1">
-  </label>
-
-  <label>
-    ВИД ПОЧИСТВАНЕ:
-    <select id="optionSelect">
-      <option value="basicCleaning">Основно почистване</option>
-      <option value="postConstructionCleaning">Почистване след ремонт</option>
-      <option value="monthlySubscriptionCleaning">Абонаментно почистване при интензитет - веднъж месечно</option>
-    </select>
-  </label>
-
-  <div>
-    <h3 id="totalPrice">ЦЕНА: 4 ЛЕВА</h3>
-  </div>
 </body>
 </html>
