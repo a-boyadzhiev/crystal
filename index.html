@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      margin: 0px;
+    }
+
+    label {
+      font-size: 20px;
+      margin: 20px;
+      display: block;
+      color: #ffffff;
+    }
+
+    select, input {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-left: 10px;
+      padding: 8px;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 20px;
+      color: #F0A141;
+    }
+
+    @media screen and (min-width: 600px) {
+      /* Adjust styles for screens wider than 600px */
+      label {
+        margin: 20px;
+      }
+
+      select, input {
+        margin-left: 0;
+        width: auto;
+      }
+    }
+  </style>
+  <script defer>
+    const numberInput = document.getElementById('numberInput');
+    const optionSelect = document.getElementById('optionSelect');
+    const totalPrice = document.getElementById('totalPrice');
+
+    const options = {
+      basicCleaning: 4,
+      postConstructionCleaning: 5,
+      monthlySubscriptionCleaning: 4.5,
+    };
+
+    function calculateTotal() {
+      const number = parseInt(numberInput.value, 10) || 1;
+      const selectedOption = optionSelect.value;
+      const total = number * options[selectedOption];
+      totalPrice.textContent = `ЦЕНА: ${total.toFixed(2)} ЛЕВА`;
+    }
+
+    function initializeScript() {
+      numberInput.addEventListener('input', calculateTotal);
+      optionSelect.addEventListener('change', calculateTotal);
+
+      // Initial calculation
+      calculateTotal();
+    }
+
+    // Initialize the script after the DOM has fully loaded
+    document.addEventListener('DOMContentLoaded', initializeScript);
+  </script>
+</head>
+<body>
+  <label>
+    КВ.МЕТРИ
+    <input type="number" id="numberInput" value="1">
+  </label>
+
+  <label>
+    ВИД ПОЧИСТВАНЕ:
+    <select id="optionSelect">
+      <option value="basicCleaning">Основно почистване</option>
+      <option value="postConstructionCleaning">Почистване след ремонт</option>
+      <option value="monthlySubscriptionCleaning">Абонаментно почистване при интензитет - веднъж месечно</option>
+    </select>
+  </label>
+
+  <div>
+    <h3 id="totalPrice">ЦЕНА: 4 ЛЕВА</h3>
+  </div>
+</body>
+</html>
