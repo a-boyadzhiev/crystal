@@ -32,7 +32,7 @@
       color: #F0A141;
     }
 
-    @media screen and (min-width: 600px) {
+       @media screen and (min-width: 600px) {
       label {
         margin: 20px;
       }
@@ -41,6 +41,14 @@
         margin-left: 0;
         width: auto;
       }
+    }
+
+    @media screen and (max-width: 599px) {
+      input {
+        max-width: 200px; /* Set a maximum width for the input */
+        margin: 0 auto; /* Center the input */
+      }
+    }
     }
   </style>
 </head>
