@@ -1,1 +1,1 @@
-A custom script for a freelancing project crystal-service.com
+A custom script for a freelancing project cristal-service.com
